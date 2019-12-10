@@ -1,6 +1,6 @@
-create database burgers_db;
+create database r2c30ef35711mbnx;
 
-use burgers_db;
+use r2c30ef35711mbnx;
 create table burgers (
     id integer(30) auto_increment,
     burger_name varchar(80),
