@@ -17,10 +17,7 @@ $(".devoure").on("click", function(event) {
     $.post("/burger/devoured",
         {
             burger_name: burgerName,
-        },
-        {
-            function(data, status) {
-                location.reload();
-            }
+        }).then(function(data) {
+            location.reload();
         });
 });
