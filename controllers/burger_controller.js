@@ -3,6 +3,10 @@ var router = express.Router();
 var burger = require("../models/burger.js");
 
 //refer to burger_data in index
+router.get("/", function(req, res) {
+    res.redirect("/burger");
+});
+
 router.get("/burger", function(req, res) {
     burger.selectAll(function(burgerData) {
         res.render("index", { burger_data: burgerData})
@@ -10,20 +14,16 @@ router.get("/burger", function(req, res) {
 });
 
 router.post("/burger/new", function(req, res) {
-    burger.insertOne(function(burgerData) {
-        console.log(burgerData);
+    burger.insertOne(req.body.burger_name, 0, function(burgerData) {
+        res.json(burgerData);
         res.redirect("/burger");
     });
 });
 
 router.post("/burger/devoured", function(req, res) {
-    burger.updateOne(function(burgerData) {
-        console.log(burgerData);
-        res.redirect("/burger")
+    burger.updateOne(req.body.burger_name, req.body.burger_name, function(burgerData) {
+        res.json(burgerData);
     });
 });
 
 module.exports = router;
-
-//look at wek 14 and week 15 video guide
-//on click will go to burger/create as a form action

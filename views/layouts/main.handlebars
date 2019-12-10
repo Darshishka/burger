@@ -1,9 +1,20 @@
 {{!-- everything else other than the body in html --}}
 <!DOCTYPE html>
+<html>
     <head>
         <title>Burgers</title>
+{{!-- <link rel="stylesheet" href="../../public/assets/css/burger_style.css"> --}}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        {{!-- {{#each css}}
+            <link rel="stylesheet" href="/css/{{this}}">
+        {{/each}} --}}
+        <style>
+            body {
+                background-color: antiquewhite;
+            }
+        </style>
     </head>
     <body>
-        {{body}}
+        {{{body}}}
     </body>
 </html>

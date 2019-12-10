@@ -5,4 +5,4 @@ insert into burgers (burger_name, devoured)
 values ("Krabby-Patty", true);
 
 insert into burgers (burger_name, devoured)
-values ("Devil's-Burger", false);
+values ("Devil-Burger", false);

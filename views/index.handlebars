@@ -1,7 +1,30 @@
 {{!-- just body tag of html --}}
-{{body}}
-{{#each burgers}}
-<ol>
-    <p>{{burger_name}}</p>
-</ol>
-{{/each}}
+<h1 class="mx-auto" style="width: 200px; text-decoration:underline; color:maroon;">Let's Eat!</h1>
+<div class="container">
+    <div class="row">
+{{!-- not yet devoured --}}
+        <div class="col">
+            {{#each burger_data}}
+            <div class="row mb-2" style="float: right; position:relative; margin:5%;">
+                {{#unless this.devoured}}{{burger_name}}<button value="{{burger_name}}" class="devoure ml-2 btn btn-sm btn-outline-dark">Devoure Me!</button>{{/unless}}
+            </div>
+            {{/each}}
+        </div>
+        <div class="col" style="padding: 0%; size:2%"></div>
+{{!-- decoured --}}
+        <div class="col">
+            {{#each burger_data}}
+            <div class="row mb-2">
+                {{#if this.devoured}}{{burger_name}}{{/if}}
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+<form autocomplete="off">
+    <input id="burger_name" style="width:200px; margin-left:40%">
+    <button class="submit" type="submit">Submit</button>
+</form>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="/assets/javascript/app.js">
+</script>
